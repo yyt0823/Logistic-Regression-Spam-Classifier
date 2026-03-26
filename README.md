@@ -14,7 +14,7 @@ Features are standardized using training-set statistics only (no data leakage).
 
 ---
 
-## What I Built
+## Implementation
 
 ### Logistic Regression with SGD from Scratch
 Implemented mini-batch SGD with:
