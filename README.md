@@ -1,7 +1,5 @@
 # Logistic Regression — Spam Classification
 
-**McGill COMP551** — Logistic Regression from Scratch on the UCI Spambase Dataset
-
 > **Skills:** NumPy · Mini-batch SGD · L1/L2 regularization · K-fold cross-validation · Hyperparameter search · Feature sparsity analysis
 
 ---
