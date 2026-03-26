@@ -4,7 +4,7 @@
 
 ---
 
-## Task
+## Overview
 
 Binary email spam classification on the [UCI Spambase dataset](https://archive.ics.uci.edu/dataset/94/spambase) — **4,601 emails**, 57 features (word/character frequencies, capital letter statistics).
 
@@ -16,7 +16,7 @@ Features are standardized using training-set statistics only (no data leakage).
 
 ## What I Built
 
-### Task 1 — Logistic Regression with SGD from Scratch
+### Logistic Regression with SGD from Scratch
 Implemented mini-batch SGD with:
 - **L2 regularization** (weight decay)
 - **Momentum** (β = 0.9)
@@ -24,7 +24,7 @@ Implemented mini-batch SGD with:
 
 Key hyperparameters: `lr=0.001`, `batch_size=16`, `epochs=50`, `λ=0.001`
 
-### Task 2 — Hyperparameter Search with K-Fold Cross-Validation
+### Hyperparameter Search with K-Fold Cross-Validation
 Grid search over learning rate, batch size, and number of epochs using **5-fold CV**.
 
 | lr | batch_size | epochs |
@@ -33,22 +33,22 @@ Grid search over learning rate, batch size, and number of epochs using **5-fold 
 
 Best configuration selected by mean cross-validation log-loss.
 
-### Task 3 — Regularization Strength (λ) Selection
+### Regularization Strength (λ) Selection
 K-fold CV over a grid of λ values to find the optimal regularization strength:
 
 ```
 λ ∈ {0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1}
 ```
 
-### Task 4 — L1 Regularization & Feature Sparsity
+### L1 Regularization & Feature Sparsity
 Used L1 penalty (SAGA solver) over a log-spaced grid of `C` values to produce sparse solutions and reveal which features are most predictive of spam. Tracked coefficient paths and the number of non-zero weights vs. regularization strength.
 
 ---
 
 ## Results
 
-| Task | Result |
-|------|--------|
+| | Result |
+|--|--------|
 | SGD training | Loss converges cleanly across batch sizes |
 | Best CV config | `lr=1e-3, batch=16, epochs=100` |
 | Optimal λ | Selected via cross-validation |
@@ -60,5 +60,5 @@ Used L1 penalty (SAGA solver) over a log-spaced grid of `C` values to produce sp
 
 | File | Description |
 |------|-------------|
-| `code.ipynb` | Full notebook with all tasks and outputs |
+| `code.ipynb` | Full notebook with all outputs |
 | `writeup.pdf` | Written report |
